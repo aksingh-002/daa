@@ -1,22 +1,24 @@
-def fractionalKnapsack(W, val, wt):
-	val.sort(key=lambda x: (val[x]/wt[x]), reverse=True)
-	wt.sort(key=lambda x: (val[x]/wt[x]), reverse=True)
+class Item:
+	def __init__(self, value, weight):
+		self.value = value
+		self.weight = weight
+
+def fractionalKnapsack(W, arr):
+	arr.sort(key=lambda x: (x.value/x.weight), reverse=True)
+
 	finalvalue = 0.0
 
-	for i in range(len(val)):
-		if wt[i] <= W:
-			W -= wt[i]
-			finalvalue += val[i]
+	for item in arr:
+		if item.weight <= W:
+			W -= item.weight
+			finalvalue += item.value
 		else:
-			finalvalue += val[i] * W / wt[i]
+			finalvalue += item.value * W / item.weight
 			break
 	return finalvalue
 
-
 if __name__ == "__main__":
-
 	W = 50
-	val = [60, 100, 120]
-	wt = [10, 20, 30]
-	max_val = fractionalKnapsack(W, val, wt)
+	arr = [Item(60, 10), Item(100, 20), Item(120, 30)]
+	max_val = fractionalKnapsack(W, arr)
 	print(max_val)
