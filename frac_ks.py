@@ -5,7 +5,6 @@ class Item:
 
 def fractionalKnapsack(W, arr):
 	arr.sort(key=lambda x: (x.value/x.weight), reverse=True)
-
 	finalvalue = 0.0
 
 	for item in arr:
