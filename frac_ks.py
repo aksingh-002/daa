@@ -1,13 +1,13 @@
 def fractionalKnapsack(W, val, wt):
-	arr.sort(key=lambda x: (x.value/x.weight), reverse=True)
+	arr.sort(key=lambda x: (val[x]/wt[x]), reverse=True)
 	finalvalue = 0.0
 
-	for item in arr:
-		if item.weight <= W:
-			W -= item.weight
-			finalvalue += item.value
+	for i in range(len(val)):
+		if wt[i] <= W:
+			W -= wt[i]
+			finalvalue += val[i]
 		else:
-			finalvalue += item.value * W / item.weight
+			finalvalue += val[i] * W / wt[i]
 			break
 	return finalvalue
 
