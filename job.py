@@ -14,7 +14,6 @@ def printJobScheduling(arr, t):
 				result[j] = True
 				job[j] = arr[i][0]
 				break
-
 	print(job)
 
 
@@ -26,5 +25,4 @@ if __name__ == '__main__':
 			['e', 3, 15]]
 
 	print("Following is maximum profit sequence of jobs")
-
 	printJobScheduling(arr, 3)
