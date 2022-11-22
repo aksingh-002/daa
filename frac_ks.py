@@ -1,5 +1,6 @@
 def fractionalKnapsack(W, val, wt):
-	arr.sort(key=lambda x: (val[x]/wt[x]), reverse=True)
+	val.sort(key=lambda x: (val[x]/wt[x]), reverse=True)
+	wt.sort(key=lambda x: (val[x]/wt[x]), reverse=True)
 	finalvalue = 0.0
 
 	for i in range(len(val)):
