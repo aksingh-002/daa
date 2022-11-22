@@ -1,10 +1,6 @@
 def printJobScheduling(arr, t):
 	n = len(arr)
-
-	for i in range(n):
-		for j in range(n - 1 - i):
-			if arr[j][2] < arr[j + 1][2]:
-				arr[j], arr[j + 1] = arr[j + 1], arr[j]
+	arr.sort(key=lambda x: x[2], reverse=True)
 
 	result = [False] * t
 	job = ['-1'] * t
